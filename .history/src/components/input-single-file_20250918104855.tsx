@@ -105,14 +105,14 @@ export default function InputSingleFile({
                 Tipo de arquivo inválido
               </Text>
             }              
-            {formFile && !isValidSize() &&
+            {formFile && !isValidExtension() &&
               <Text variant="label-small" className="text-accent-red">
-                O tamanho do arquivo ultrapassa o máximo
+                Tipo de arquivo inválido
               </Text>
             }              
             {error && (
               <Text variant="label-small" className="text-accent-red">
-                {error}
+                Erro no campo
               </Text>
             )}
           </div>

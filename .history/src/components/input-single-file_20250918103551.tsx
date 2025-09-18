@@ -59,24 +59,13 @@ export default function InputSingleFile({
     [formValues, name]
   );
   const {fileExtension, fileSize} = React.useMemo(() => ({
-    fileExtension: formFile?.name?.split('.')?.pop()?.toLowerCase() || "",
+    fileExtension: formFile?.name?.split('.')?.pop()?.toLowerCase() || ""
     fileSize: formFile?.size || 0
   }), [formFile])
-  
-  function isValidExtension(){
-    return allowedExtensions.includes(fileExtension);
-  }
 
-  function isValidSize() {
-    return fileSize <= maxFileSizeInMB * 1024 * 1024;
-  }
-
-  function isValidFile() {
-    return isValidExtension() && isValidSize();
-  } 
   return (
     <div>
-      {!formFile || isValidFile() ? (
+      {!formFile ? (
         <>
           <div className="w-full relative group cursor-pointer">
             <input
@@ -98,21 +87,9 @@ export default function InputSingleFile({
                 ou clique para selecionar
               </Text>
             </div>
-          </div>
-          <div className="flex flex-col gap-1 mt-1">
-            {formFile && !isValidExtension() &&
-              <Text variant="label-small" className="text-accent-red">
-                Tipo de arquivo inválido
-              </Text>
-            }              
-            {formFile && !isValidSize() &&
-              <Text variant="label-small" className="text-accent-red">
-                O tamanho do arquivo ultrapassa o máximo
-              </Text>
-            }              
             {error && (
               <Text variant="label-small" className="text-accent-red">
-                {error}
+                Erro no campo
               </Text>
             )}
           </div>

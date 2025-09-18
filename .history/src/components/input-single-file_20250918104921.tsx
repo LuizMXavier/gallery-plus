@@ -112,7 +112,7 @@ export default function InputSingleFile({
             }              
             {error && (
               <Text variant="label-small" className="text-accent-red">
-                {error}
+                Erro no campo
               </Text>
             )}
           </div>

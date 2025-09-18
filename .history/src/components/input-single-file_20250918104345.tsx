@@ -97,22 +97,10 @@ export default function InputSingleFile({
                 <br />
                 ou clique para selecionar
               </Text>
-            </div>
-          </div>
-          <div className="flex flex-col gap-1 mt-1">
-            {formFile && !isValidExtension() &&
-              <Text variant="label-small" className="text-accent-red">
-                Tipo de arquivo inválido
-              </Text>
-            }              
-            {formFile && !isValidSize() &&
-              <Text variant="label-small" className="text-accent-red">
-                O tamanho do arquivo ultrapassa o máximo
-              </Text>
-            }              
+            </div clas>
             {error && (
               <Text variant="label-small" className="text-accent-red">
-                {error}
+                Erro no campo
               </Text>
             )}
           </div>

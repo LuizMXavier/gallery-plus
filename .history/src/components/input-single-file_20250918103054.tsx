@@ -39,8 +39,8 @@ interface InputSingleFileProps
   extends VariantProps<typeof inputSingleFileVariants>,
     Omit<React.ComponentProps<"input">, "size" | "form"> {
   form: any;    
-  allowedExtensions: string[];
-  maxFileSizeInMB: number;
+  allowedExtensions: string[]
+  maxFileSize
   error?: React.ReactNode;
 }
 
@@ -48,8 +48,6 @@ export default function InputSingleFile({
   form,
   size,
   error,
-  allowedExtensions,
-  maxFileSizeInMB,
   ...props
 }: InputSingleFileProps) {
   const formValues = useWatch({ control: form.control });
@@ -58,25 +56,10 @@ export default function InputSingleFile({
     () => formValues[name]?.[0],
     [formValues, name]
   );
-  const {fileExtension, fileSize} = React.useMemo(() => ({
-    fileExtension: formFile?.name?.split('.')?.pop()?.toLowerCase() || "",
-    fileSize: formFile?.size || 0
-  }), [formFile])
-  
-  function isValidExtension(){
-    return allowedExtensions.includes(fileExtension);
-  }
 
-  function isValidSize() {
-    return fileSize <= maxFileSizeInMB * 1024 * 1024;
-  }
-
-  function isValidFile() {
-    return isValidExtension() && isValidSize();
-  } 
   return (
     <div>
-      {!formFile || isValidFile() ? (
+      {!formFile ? (
         <>
           <div className="w-full relative group cursor-pointer">
             <input
@@ -98,21 +81,9 @@ export default function InputSingleFile({
                 ou clique para selecionar
               </Text>
             </div>
-          </div>
-          <div className="flex flex-col gap-1 mt-1">
-            {formFile && !isValidExtension() &&
-              <Text variant="label-small" className="text-accent-red">
-                Tipo de arquivo inválido
-              </Text>
-            }              
-            {formFile && !isValidSize() &&
-              <Text variant="label-small" className="text-accent-red">
-                O tamanho do arquivo ultrapassa o máximo
-              </Text>
-            }              
             {error && (
               <Text variant="label-small" className="text-accent-red">
-                {error}
+                Erro no campo
               </Text>
             )}
           </div>
