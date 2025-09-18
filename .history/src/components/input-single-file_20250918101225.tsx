@@ -3,7 +3,7 @@ import Text, { textVariants } from "./text";
 import { tv, type VariantProps } from "tailwind-variants";
 import UploadFileIcon from "../assets/icons/upload-file.svg?react";
 import FileImageIcon from "../assets/icons/image.svg?react";
-import { useWatch} from "react-hook-form";
+import { useWatch, type Control } from "react-hook-form";
 import React from "react";
 
 export const inputSingleFileVariants = tv({
@@ -38,17 +38,17 @@ export const inputSingleFileIconVariants = tv({
 interface InputSingleFileProps
   extends VariantProps<typeof inputSingleFileVariants>,
     Omit<React.ComponentProps<"input">, "size" | "form"> {
-  form: any;    
+  form: <any>;    
   error?: React.ReactNode;
 }
 
 export default function InputSingleFile({
-  form,
+  control,
   size,
   error,
   ...props
 }: InputSingleFileProps) {
-  const formValues = useWatch({ control: form.control });
+  const formValues = useWatch({ control });
   const name = props.name || "";
   const formFile: File = React.useMemo(
     () => formValues[name]?.[0],
@@ -91,7 +91,7 @@ export default function InputSingleFile({
           <Icon svg={FileImageIcon} className="fill-white w-6 h-6" />
           <div className="flex flex-col">
             <Text variant="label-medium" className="text-placeholder">
-              {formFile.name}
+              Nome do arquivo.png
             </Text>
           </div>
           <div className="flex">
@@ -101,9 +101,6 @@ export default function InputSingleFile({
                 variant: "label-small",
                 className: "text-accent-red cursor-pointer hover:underline",
               })}
-              onClick={() => {
-                form.setValue(name, undefined);
-              }}
             >
               Remover
             </button>

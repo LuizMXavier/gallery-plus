@@ -102,7 +102,7 @@ export default function InputSingleFile({
                 className: "text-accent-red cursor-pointer hover:underline",
               })}
               onClick={() => {
-                form.setValue(name, undefined);
+                form.setValue
               }}
             >
               Remover

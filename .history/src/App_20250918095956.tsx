@@ -12,7 +12,7 @@ import InputSingleFile from "./components/input-single-file";
 import { useForm } from 'react-hook-form';
 
 export default function App() {
-	const form = useForm();
+	const { control } = useForm();
 	return (
 		<div className="grid gap-7 p-6">
 			<div className="flex gap-3">
@@ -64,7 +64,7 @@ export default function App() {
 			</div>
 
 			<div>
-				<InputSingleFile form={form} {...form.register('file')}/>
+				<InputSingleFile name="anexo" control={control}/>
 			</div>
 		</div>
 	);

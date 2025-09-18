@@ -64,7 +64,7 @@ export default function App() {
 			</div>
 
 			<div>
-				<InputSingleFile form={form} {...form.register('file')}/>
+				<InputSingleFile form={form} {/>
 			</div>
 		</div>
 	);

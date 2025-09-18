@@ -101,9 +101,6 @@ export default function InputSingleFile({
                 variant: "label-small",
                 className: "text-accent-red cursor-pointer hover:underline",
               })}
-              onClick={() => {
-                form.setValue(name, undefined);
-              }}
             >
               Remover
             </button>
