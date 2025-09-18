@@ -1,0 +1,30 @@
+import { tv } from "tailwind-variants";
+import Icon from "./icon";
+import Text from "./text";
+
+export const inputTextContainerVariants = tv({
+    base: "flex flex-col gap-1"
+})
+
+export const inputTextWrapperVariants = tv({
+    base:`
+        border border-solid border-border-primary
+        focus:border-border-active bg-transparent
+        rounded flex items-center gap-3
+    `,
+    var
+})
+
+export default function InputText({}) {
+    return (
+        <div className={inputTextContainerVariants()}>
+            <div>
+                <Icon svg={null}/>
+                <input/>
+            </div>
+            <Text variant="label-small" className="text-accent-red">
+                Um erro no campo
+            </Text>
+        </div>
+    )
+}
