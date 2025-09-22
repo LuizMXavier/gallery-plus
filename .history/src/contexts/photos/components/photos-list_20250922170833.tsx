@@ -1,0 +1,18 @@
+import PhotoWidget from "./photo-widget";
+
+interface PhotosListProps {
+    photos: Photo[];
+    loading?: boolean;
+}
+
+export default function PhotoList({photos, loading}: PhotosListProps) {
+    return (
+        <div>
+            <div className="grid grid-colds-5 gap-9">
+                <PhotoWidget
+                    photo={}
+                />
+            </div>
+        </div>
+    )
+}

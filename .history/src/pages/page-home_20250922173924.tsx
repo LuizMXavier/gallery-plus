@@ -14,8 +14,7 @@ export default function PageHome() {
               { id: "123", title: "Album2" },
               { id: "456", title: "Album3" },
             ],
-          },
-        ]} 
+          },]} loading
       />
     </Container>
   );

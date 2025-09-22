@@ -1,11 +1,13 @@
 import Container from "../components/container";
 import PhotoList from "../contexts/photos/components/photos-list";
+import type { Photo } from "../contexts/photos/models/photo";
 
 export default function PageHome() {
   return (
     <Container>
       <PhotoList
-        photos={[{
+        photos={[
+          {
             id: "123",
             title: "Olá mundo",
             imageId: "portrait-tower.png",
@@ -15,7 +17,7 @@ export default function PageHome() {
               { id: "456", title: "Album3" },
             ],
           },
-        ]} 
+        ]}
       />
     </Container>
   );

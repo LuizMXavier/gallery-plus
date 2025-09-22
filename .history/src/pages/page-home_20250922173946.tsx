@@ -15,7 +15,7 @@ export default function PageHome() {
               { id: "456", title: "Album3" },
             ],
           },
-        ]} 
+        ]} loading
       />
     </Container>
   );
