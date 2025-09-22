@@ -1,0 +1,12 @@
+
+import PageComponents from "./pages/pages-components";
+
+export default function App() {
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path="/componentes" elements={<PageComponents/>}/>
+			</Routes>
+		</BrowserRouter>
+	)
+}
