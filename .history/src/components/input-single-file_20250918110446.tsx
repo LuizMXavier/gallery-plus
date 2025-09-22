@@ -41,7 +41,7 @@ interface InputSingleFileProps
   form: any;    
   allowedExtensions: string[];
   maxFileSizeInMB: number;
-  replaceBy: React.ReactNode;
+  replaceBy: React
   error?: React.ReactNode;
 }
 
@@ -49,7 +49,6 @@ export default function InputSingleFile({
   form,
   size,
   error,
-  replaceBy,
   allowedExtensions,
   maxFileSizeInMB,
   ...props
@@ -120,31 +119,28 @@ export default function InputSingleFile({
           </div>
         </>
       ) : (
-        <>
-          {replaceBy}
-          <div className="flex gap-3 items-center border border-solid border-border-primary mt-5 p-3 rounded">
-            <Icon svg={FileImageIcon} className="fill-white w-6 h-6" />
-            <div className="flex flex-col">
-              <Text variant="label-medium" className="text-placeholder">
-                {formFile.name}
-              </Text>
-            </div>
-            <div className="flex">
-              <button
-                type="button"
-                className={textVariants({
-                  variant: "label-small",
-                  className: "text-accent-red cursor-pointer hover:underline",
-                })}
-                onClick={() => {
-                  form.setValue(name, undefined);
-                }}
-              >
-                Remover
-              </button>
-            </div>
+        <div className="flex gap-3 items-center border border-solid border-border-primary mt-5 p-3 rounded">
+          <Icon svg={FileImageIcon} className="fill-white w-6 h-6" />
+          <div className="flex flex-col">
+            <Text variant="label-medium" className="text-placeholder">
+              {formFile.name}
+            </Text>
           </div>
-        </>
+          <div className="flex">
+            <button
+              type="button"
+              className={textVariants({
+                variant: "label-small",
+                className: "text-accent-red cursor-pointer hover:underline",
+              })}
+              onClick={() => {
+                form.setValue(name, undefined);
+              }}
+            >
+              Remover
+            </button>
+          </div>
+        </div>
       )}
     </div>
   );

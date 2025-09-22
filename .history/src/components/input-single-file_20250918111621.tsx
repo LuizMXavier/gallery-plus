@@ -76,9 +76,10 @@ export default function InputSingleFile({
   function isValidFile() {
     return isValidExtension() && isValidSize();
   } 
+  
   return (
     <div>
-      {!formFile || isValidFile() ? (
+      { !formFile || isValidFile() ? (
         <>
           <div className="w-full relative group cursor-pointer">
             <input

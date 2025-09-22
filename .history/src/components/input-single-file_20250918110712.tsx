@@ -120,6 +120,7 @@ export default function InputSingleFile({
           </div>
         </>
       ) : (
+
         <>
           {replaceBy}
           <div className="flex gap-3 items-center border border-solid border-border-primary mt-5 p-3 rounded">
@@ -144,8 +145,8 @@ export default function InputSingleFile({
               </button>
             </div>
           </div>
-        </>
-      )}
+        )}
+      </>
     </div>
   );
 }

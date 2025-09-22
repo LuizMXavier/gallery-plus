@@ -15,7 +15,7 @@ import ImageFilePreview from "./components/image-file-preview";
 export default function App() {
 	const form = useForm();
 	const file = form.watch("file");
-	const fileSource = file?.[0] ? URL.createObjectURL(file[0]) : undefined;
+	const fileSource = file?.[0] ? URL
 	return (
 		<div className="grid gap-7 p-6">
 			<div className="flex gap-3">
@@ -71,7 +71,7 @@ export default function App() {
 				form={form}
 				allowedExtensions={['png', 'jpg', 'jpeg', 'webp']}
 				maxFileSizeInMB={50}
-				replaceBy={<ImageFilePreview src={fileSource} alt="Imagem"/>}
+				replaceBy={<ImageFilePreview/>}
 				{...form.register('file')}/>
 			</div>
 		</div>

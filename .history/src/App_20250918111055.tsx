@@ -71,7 +71,8 @@ export default function App() {
 				form={form}
 				allowedExtensions={['png', 'jpg', 'jpeg', 'webp']}
 				maxFileSizeInMB={50}
-				replaceBy={<ImageFilePreview src={fileSource} alt="Imagem"/>}
+				replaceBy={<ImageFilePreview src={fileSource} alt="Image,
+				"/>}
 				{...form.register('file')}/>
 			</div>
 		</div>
