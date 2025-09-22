@@ -1,0 +1,4 @@
+
+interface PhotoWidgetProps {
+    photo: Photo
+}
