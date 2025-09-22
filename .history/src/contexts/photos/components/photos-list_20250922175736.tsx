@@ -32,7 +32,7 @@ export default function PhotoList({ photos, loading }: PhotosListProps) {
         </div>
       )}
       {!loading && (
-        <div className="grid grid-colds-5 gap-9">
+        <div className="grid grid-colds-4 gap-9">
           {Array.from({ length: 10 }).map((_, index) => (
             <PhotoWidget
               key={`photo-loading-${index}`}

@@ -1,0 +1,4 @@
+
+interface AlbumsFilterProps {
+    albums: Album
+}
