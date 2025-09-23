@@ -5,7 +5,6 @@ import Container from "../components/container";
 import Skeleton from "../components/skeleton";
 import PhotosNavigator from "../contexts/photos/components/photos-navigator";
 import ImageFilePreview from "../components/image-preview";
-import Button from "../components/button";
 
 export default function PagePhotoDetails() {
   const { id } = useParams();
@@ -19,26 +18,17 @@ export default function PagePhotoDetails() {
         ) : (
           <Skeleton className="w-48 h-8" />
         )}
-        <PhotosNavigator loading={isLoadingPhoto} />
+        <PhotosNavigator loading={isLoadingPhoto}/>
       </header>
       <div className="grid grid-cols-[21rem] gap-24">
-        <div className="space-y-3">
-          {!isLoadingPhoto ? (
+        <div className="flex flex-col gap-3">
             <ImageFilePreview
-              src={`/images/${photo?.imageId}`}
-              title={photo?.title}
-              imageClassName="h-[21rem]"
+                src={`/images/${photo?.imageId}`}
+                title={photo?.title}
+                imageClassName="h-[21"
             />
-          ) : (
-            <Skeleton className="h-[21rem]" />
-          )}
-
-          {!isLoadingPhoto ? (
-            <Button variant="destructive">Excluir</Button>
-          ) : (
-            <Skeleton className="w-20 h-10" />
-          )}
         </div>
+
       </div>
     </Container>
   );

@@ -19,26 +19,23 @@ export default function PagePhotoDetails() {
         ) : (
           <Skeleton className="w-48 h-8" />
         )}
-        <PhotosNavigator loading={isLoadingPhoto} />
+        <PhotosNavigator loading={isLoadingPhoto}/>
       </header>
       <div className="grid grid-cols-[21rem] gap-24">
-        <div className="space-y-3">
-          {!isLoadingPhoto ? (
-            <ImageFilePreview
-              src={`/images/${photo?.imageId}`}
-              title={photo?.title}
-              imageClassName="h-[21rem]"
+        <div className="flex flex-col gap-3">
+            {!isLoadingPhoto ? (
+                <ImageFilePreview
+                src={`/images/${photo?.imageId}`}
+                title={photo?.title}
+                imageClassName="h-[21rem]"
             />
-          ) : (
-            <Skeleton className="h-[21rem]" />
-          )}
-
-          {!isLoadingPhoto ? (
-            <Button variant="destructive">Excluir</Button>
-          ) : (
-            <Skeleton className="w-20 h-10" />
-          )}
+            ): (
+                <Skeleton className="h-[21rem]"/>
+            )}
+            <Button variant="destruc"></Button>
+            
         </div>
+
       </div>
     </Container>
   );
