@@ -26,7 +26,7 @@ export default function MainHeader({className, ...props}: MainHeaderProps) {
 
             <div className="flex items-center gap-3">
                 <PhotoNewDialog trigger={<Button>Nova Foto</Button>}/>
-                <AlbumNewDialog trigger={<Button variant="secondary">Criar álbum</Button>}/>
+                <AlbumNewDialog trigger={}/>
                 
             </div>
 
