@@ -1,0 +1,4 @@
+
+interface ALbumsListSelectableProps {
+    loading?: boolean
+}

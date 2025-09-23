@@ -44,7 +44,7 @@ export default function PagePhotoDetails() {
           <Text as="h3" variant="heading-medium" className="mb-6">
             Álbuns
           </Text>
-          <AlbumsListSelectable photo={photo} albums={[]}/>
+          <AlbumsListSelectable photo={photo} albums={}/>
         </div>
       </div>
     </Container>

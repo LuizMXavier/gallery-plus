@@ -6,7 +6,6 @@ import Skeleton from "../components/skeleton";
 import PhotosNavigator from "../contexts/photos/components/photos-navigator";
 import ImageFilePreview from "../components/image-preview";
 import Button from "../components/button";
-import AlbumsListSelectable from "../contexts/albums/components/albums-list-selectable";
 
 export default function PagePhotoDetails() {
   const { id } = useParams();
@@ -41,10 +40,9 @@ export default function PagePhotoDetails() {
           )}
         </div>
         <div className="py-3">
-          <Text as="h3" variant="heading-medium" className="mb-6">
-            Álbuns
+          <Text as="h3">
+
           </Text>
-          <AlbumsListSelectable photo={photo} albums={[]}/>
         </div>
       </div>
     </Container>
