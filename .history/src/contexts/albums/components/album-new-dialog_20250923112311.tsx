@@ -58,7 +58,7 @@ export default function AlbumNewDialog({ trigger }: AlbumNewDialogProps) {
                     key={photo.id}
                     src={`/image/${photo.imageId}`}
                     title={photo.title}
-                    imageClassName="w-20 h-20"
+                    ima="w-20 h-20"
                     onSelectImage={(selected) => 
                       handleTogglePhoto(selected, photo.id)
                     }

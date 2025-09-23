@@ -14,7 +14,6 @@ import type { Photo } from "../../photos/models/photo";
 import SelectCheckboxIlustration from "../../../assets/images/select-checkbox.svg?react";
 import Skeleton from "../../../components/skeleton";
 import ImageFilePreview from "../../../components/image-preview";
-import PhotoImageselectable from "../../photos/components/photo-image-selectable";
 
 interface AlbumNewDialogProps {
   trigger: React.ReactNode;
@@ -35,9 +34,7 @@ export default function AlbumNewDialog({ trigger }: AlbumNewDialogProps) {
     },
   ]; 
 
-  function handleTogglePhoto(selected: boolean, photoid: string) {
-    console.log(selected, photoid);
-  } 
+  function handleTogglePhoto(setected: boolean, photoid: string) 
 
   return (
     <Dialog>
@@ -54,14 +51,11 @@ export default function AlbumNewDialog({ trigger }: AlbumNewDialogProps) {
             {!isLoadingPhoto && photos.length > 0 && (
               <div className="flex flex-wrap gap-2">
                 {photos.map((photo) => (
-                  <PhotoImageselectable
+                  <ImageFilePreview
                     key={photo.id}
                     src={`/image/${photo.imageId}`}
                     title={photo.title}
-                    imageClassName="w-20 h-20"
-                    onSelectImage={(selected) => 
-                      handleTogglePhoto(selected, photo.id)
-                    }
+                    className="w-20 h-20"
                   />
                 ))}
               </div>

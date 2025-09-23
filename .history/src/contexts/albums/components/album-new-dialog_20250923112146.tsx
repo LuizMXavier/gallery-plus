@@ -35,7 +35,7 @@ export default function AlbumNewDialog({ trigger }: AlbumNewDialogProps) {
     },
   ]; 
 
-  function handleTogglePhoto(selected: boolean, photoid: string) {
+  function handleTogglePhoto(setected: boolean, photoid: string) {
     console.log(selected, photoid);
   } 
 
@@ -58,10 +58,8 @@ export default function AlbumNewDialog({ trigger }: AlbumNewDialogProps) {
                     key={photo.id}
                     src={`/image/${photo.imageId}`}
                     title={photo.title}
-                    imageClassName="w-20 h-20"
-                    onSelectImage={(selected) => 
-                      handleTogglePhoto(selected, photo.id)
-                    }
+                    className="w-20 h-20"
+                    onSelectImage={}
                   />
                 ))}
               </div>
