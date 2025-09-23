@@ -13,22 +13,21 @@ export default function PageHome() {
         ]}
         className="mb-9"
       />
-      <div className="grid grid-cols-5 gap-9">
-        <PhotoList
-          photos={[
-            {
-              id: "123",
-              title: "Olá mundo",
-              imageId: "portrait-tower.png",
-              albums: [
-                { id: "3421", title: "Album1" },
-                { id: "123", title: "Album2" },
-                { id: "456", title: "Album3" },
-              ],
-            },
-          ]}
-        />
-      </div>
+      
+      <PhotoList
+        photos={[
+          {
+            id: "123",
+            title: "Olá mundo",
+            imageId: "portrait-tower.png",
+            albums: [
+              { id: "3421", title: "Album1" },
+              { id: "123", title: "Album2" },
+              { id: "456", title: "Album3" },
+            ],
+          },
+        ]}
+      />
     </Container>
   );
 }

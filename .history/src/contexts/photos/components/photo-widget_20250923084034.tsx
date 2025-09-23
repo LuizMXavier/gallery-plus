@@ -20,7 +20,7 @@ export default function PhotoWidget({photo, loading}: PhotoWidgetProps) {
                     imageClassName="w-[10.875rem] h-[10.875rem] rounded lg"/>
 
             ): (
-                <Skeleton className="w-[10.875rem] h-[10.875rem] rounded lg"/>
+                <Skeleton className="w-[10.8725rem] h-[10.8725rem] rounded lg"/>
             )}
 
             <div className="flex flex-col gap-2">

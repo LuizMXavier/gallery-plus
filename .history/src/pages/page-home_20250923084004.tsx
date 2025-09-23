@@ -13,7 +13,7 @@ export default function PageHome() {
         ]}
         className="mb-9"
       />
-      <div className="grid grid-cols-5 gap-9">
+      <div className="grid grid-cols">
         <PhotoList
           photos={[
             {

@@ -3,7 +3,6 @@ import Text from "../components/text";
 import type { Photo } from "../contexts/photos/models/photo";
 import Container from "../components/container";
 import Skeleton from "../components/skeleton";
-import PhotosNavigator from "../contexts/photos/components/photos-navigator";
 
 export default function PagePhotoDetails() {
   const { id } = useParams();
@@ -17,7 +16,7 @@ export default function PagePhotoDetails() {
         ) : (
           <Skeleton className="w-48 h-8" />
         )}
-        <PhotosNavigator/>
+        <Photo
       </header>
     </Container>
   );
