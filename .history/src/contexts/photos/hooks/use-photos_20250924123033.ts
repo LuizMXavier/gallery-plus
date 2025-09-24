@@ -4,15 +4,15 @@ import type { Photo } from "../models/photo";
 import {useQueryState, createSerializer, parseAsString} from "nuqs"
 
 const toSearchParams = createSerializer({
-    albumId: parseAsString
+    album
 })
 
 export default function usePhotos() {
     const [albumId, setAlbumId] = useQueryState("albumId");
 
     const {data, isLoading} = useQuery<Photo[]>({
-        queryKey: ['photos', albumId],
-        queryFn: () => fetcher(`/photos ${toSearchParams({albumId})}`),
+        queryKey: ['photos'],
+        queryFn: () => fetcher("/photos")
     })
 
     return {

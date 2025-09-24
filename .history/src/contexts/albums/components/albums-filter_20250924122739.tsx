@@ -40,7 +40,7 @@ export default function AlbumsFilter({
               variant={filters.albumId === album.id ? "primary":"ghost"}
               size="sm"
               className="cursor-pointer"
-              onClick={() => filters.setAlbumId(album.id)}
+              onClick={()}
             >
               {album.title}
             </Button>

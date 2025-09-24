@@ -37,10 +37,9 @@ export default function AlbumsFilter({
                 { albums.map((album) => (
             <Button
               key={album.id}
-              variant={filters.albumId === album.id ? "primary":"ghost"}
+              variant={filters.albumId === album.id ?""ghost"}
               size="sm"
               className="cursor-pointer"
-              onClick={() => filters.setAlbumId(album.id)}
             >
               {album.title}
             </Button>
