@@ -10,19 +10,31 @@ import {
 } from "../../../components/dialog";
 import InputText from "../../../components/input-text";
 import Text from "../../../components/text";
+import type { Photo } from "../../photos/models/photo";
 import SelectCheckboxIlustration from "../../../assets/images/select-checkbox.svg?react";
 import Skeleton from "../../../components/skeleton";
+import ImageFilePreview from "../../../components/image-preview";
 import PhotoImageselectable from "../../photos/components/photo-image-selectable";
-import usePhotos from "../../photos/hooks/use-photos";
 
 interface AlbumNewDialogProps {
   trigger: React.ReactNode;
 }
 
 export default function AlbumNewDialog({ trigger }: AlbumNewDialogProps) {
-  const {photos, isLoadingPhotos} = usePhotos();
-  
-  
+  const isLoadingPhoto = false;
+  const photos: Photo[] = [
+    {
+      id: "123",
+      title: "Olá mundo",
+      imageId: "portrait-tower.png",
+      albums: [
+        { id: "3421", title: "Album1" },
+        { id: "123", title: "Album2" },
+        { id: "456", title: "Album3" },
+      ],
+    },
+  ]; 
+
   function handleTogglePhoto(selected: boolean, photoid: string) {
     console.log(selected, photoid);
   } 
@@ -39,12 +51,12 @@ export default function AlbumNewDialog({ trigger }: AlbumNewDialogProps) {
               Fotos cadastradas
             </Text>
 
-            {!isLoadingPhotos && photos.length > 0 && (
+            {!isLoadingPhoto && photos.length > 0 && (
               <div className="flex flex-wrap gap-2">
                 {photos.map((photo) => (
                   <PhotoImageselectable
                     key={photo.id}
-                    src={`${import.meta.env.VITE_IMAGES_URL}/${photo.imageId}`}
+                    src={`${import.meta.env.VITE_IMAG}/${photo.imageId}`}
                     title={photo.title}
                     imageClassName="w-20 h-20"
                     onSelectImage={(selected) => 
@@ -55,7 +67,7 @@ export default function AlbumNewDialog({ trigger }: AlbumNewDialogProps) {
               </div>
             )}
 
-            {isLoadingPhotos && (
+            {isLoadingPhoto && (
               <div className="flex flex-wrap gap-2">
                 {Array.from({ length: 4 }).map((_, index) => (
                   <Skeleton
@@ -65,7 +77,7 @@ export default function AlbumNewDialog({ trigger }: AlbumNewDialogProps) {
                 ))}
               </div>
             )}
-            {!isLoadingPhotos && photos.length === 0 && (
+            {!isLoadingPhoto && photos.length === 0 && (
               <div className="w-full flex flex-col justify-center items-center gap-3">
                 <SelectCheckboxIlustration />
                 <Text variant="paragraph-medium" className="text-center">

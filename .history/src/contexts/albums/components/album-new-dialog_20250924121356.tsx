@@ -10,8 +10,10 @@ import {
 } from "../../../components/dialog";
 import InputText from "../../../components/input-text";
 import Text from "../../../components/text";
+import type { Photo } from "../../photos/models/photo";
 import SelectCheckboxIlustration from "../../../assets/images/select-checkbox.svg?react";
 import Skeleton from "../../../components/skeleton";
+import ImageFilePreview from "../../../components/image-preview";
 import PhotoImageselectable from "../../photos/components/photo-image-selectable";
 import usePhotos from "../../photos/hooks/use-photos";
 
@@ -65,7 +67,7 @@ export default function AlbumNewDialog({ trigger }: AlbumNewDialogProps) {
                 ))}
               </div>
             )}
-            {!isLoadingPhotos && photos.length === 0 && (
+            {!isLoadingPhoto && photos.length === 0 && (
               <div className="w-full flex flex-col justify-center items-center gap-3">
                 <SelectCheckboxIlustration />
                 <Text variant="paragraph-medium" className="text-center">

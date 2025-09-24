@@ -15,7 +15,7 @@ export default function PhotoWidget({photo, loading}: PhotoWidgetProps) {
         <div className="flex flex-col gap-4">
             {!loading ? (
                 <ImageFilePreview
-                    src={`${import.meta.env.VITE_IMAGES_URL}/${photo.imageId}`}
+                    src={`${import.meta.env.VITE}/images/${photo.imageId}`}
                     title={photo.title}
                     imageClassName="w-[10.875rem] h-[10.875rem] rounded lg"/>
 

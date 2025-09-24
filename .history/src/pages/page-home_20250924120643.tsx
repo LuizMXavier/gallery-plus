@@ -18,7 +18,6 @@ export default function PageHome() {
       <div className="grid grid-cols-5 gap-9">
         <PhotoList
           photos={photos}
-          loading={isLoadingPhotos}
         />
       </div>
     </Container>

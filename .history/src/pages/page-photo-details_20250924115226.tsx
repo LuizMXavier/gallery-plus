@@ -11,7 +11,7 @@ import useAlbums from "../contexts/albums/hooks/use-albums";
 
 export default function PagePhotoDetails() {
   const { id } = useParams();
-  const {albums, isLoadingAlbums} = useAlbums();
+  const {albums, isLoadingAlbums} = useAlbums()
   const isLoadingPhoto = false;
   const photo = {} as Photo;
   return (
@@ -46,7 +46,7 @@ export default function PagePhotoDetails() {
           <Text as="h3" variant="heading-medium" className="mb-6">
             Álbuns
           </Text>
-          <AlbumsListSelectable photo={photo} albums={albums} loading={isLoadingAlbums}/>
+          <AlbumsListSelectable photo={photo} albums={[]}/>
         </div>
       </div>
     </Container>

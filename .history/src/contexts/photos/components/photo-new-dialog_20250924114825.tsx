@@ -47,7 +47,7 @@ export default function PhotoNewDialog({ trigger }: PhotoNewDialogProps) {
           <div className="space-y-3">
             <Text variant="label-small">Selecionar álbuns</Text>
             <div className="flex flex-wrap gap-3">
-              {!isLoadingAlbums &&
+              {!isLoadingAlbum &&
                 albums.length > 0 &&
                 albums.map((album) => (
                   <Button
@@ -60,7 +60,7 @@ export default function PhotoNewDialog({ trigger }: PhotoNewDialogProps) {
                   </Button>
                 ))}
             </div>
-            {isLoadingAlbums &&
+            {isLoadingAlbum &&
               Array.from({ length: 5 }).map((_, index) => (
                 <Skeleton key={`album-loading-${index}`} className="w-20 h-7" />
               ))}

@@ -1,0 +1,9 @@
+import { useQuery } from "@tanstack/react-query";
+import { fetcher } from "../../../helpers/api";
+
+export default function usePhotos() {
+    const {data, isLoading} = useQuery<Photo[]>({
+        queryKey: ['photos'],
+        queryFn: () => fetcher("/photos")
+    })
+}

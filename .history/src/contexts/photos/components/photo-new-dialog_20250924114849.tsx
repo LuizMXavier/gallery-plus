@@ -60,7 +60,7 @@ export default function PhotoNewDialog({ trigger }: PhotoNewDialogProps) {
                   </Button>
                 ))}
             </div>
-            {isLoadingAlbums &&
+            {isLoadingAlbum &&
               Array.from({ length: 5 }).map((_, index) => (
                 <Skeleton key={`album-loading-${index}`} className="w-20 h-7" />
               ))}

@@ -12,6 +12,7 @@ import InputText from "../../../components/input-text";
 import Text from "../../../components/text";
 import SelectCheckboxIlustration from "../../../assets/images/select-checkbox.svg?react";
 import Skeleton from "../../../components/skeleton";
+import ImageFilePreview from "../../../components/image-preview";
 import PhotoImageselectable from "../../photos/components/photo-image-selectable";
 import usePhotos from "../../photos/hooks/use-photos";
 

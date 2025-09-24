@@ -12,6 +12,7 @@ import useAlbums from "../contexts/albums/hooks/use-albums";
 export default function PagePhotoDetails() {
   const { id } = useParams();
   const {albums, isLoadingAlbums} = useAlbums();
+  const {albums, isLoadingAlbums} = useAlbums();
   const isLoadingPhoto = false;
   const photo = {} as Photo;
   return (
