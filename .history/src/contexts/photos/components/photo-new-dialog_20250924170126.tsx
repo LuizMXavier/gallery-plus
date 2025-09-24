@@ -64,7 +64,6 @@ export default function PhotoNewDialog({ trigger }: PhotoNewDialogProps) {
   function handleSubmit(payload: PhotoNewFormSchema) {
     setIsCreatingPhoto(async () => {
       await createPhoto(payload);
-      setModalOpen(false)
     })
   }
   return (
@@ -123,7 +122,7 @@ export default function PhotoNewDialog({ trigger }: PhotoNewDialogProps) {
             <DialogClose asChild>
               <Button variant="secondary">Cancelar</Button>
             </DialogClose>
-            <Button type="submit">{isCreatingPhoto ? "Adicionando..." : "Adicionar"}</Button>
+            <Button type="submit">Adicionar</Button>
           </DialogFooter>
         </form>
       </DialogContent>

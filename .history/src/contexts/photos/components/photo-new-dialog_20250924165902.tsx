@@ -21,8 +21,6 @@ import { photoNewFormSchema, type PhotoNewFormSchema } from "../schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import React from "react";
 import ImagePreview from "../../../components/image-preview";
-import usePhoto from "../hooks/use-photo";
-import { Certificate } from "node:crypto";
 
 interface PhotoNewDialogProps {
   trigger: React.ReactNode;
@@ -35,8 +33,7 @@ export default function PhotoNewDialog({ trigger }: PhotoNewDialogProps) {
     resolver: zodResolver(photoNewFormSchema),
   });
   const { albums, isLoadingAlbums } = useAlbums();
-  const {createPhoto} = usePhoto();
-  const [isCreatingPhoto, setIsCreatingPhoto] = React.useTransition() 
+  const 
   const file = form.watch("file");
   const fileSource = file?.[0] ? URL.createObjectURL(file[0]): undefined;
 
@@ -62,10 +59,7 @@ export default function PhotoNewDialog({ trigger }: PhotoNewDialogProps) {
   }
 
   function handleSubmit(payload: PhotoNewFormSchema) {
-    setIsCreatingPhoto(async () => {
-      await createPhoto(payload);
-      setModalOpen(false)
-    })
+    console.log(payload)
   }
   return (
     <Dialog open={modalOpen} onOpenChange={setModalOpen}>
@@ -123,7 +117,7 @@ export default function PhotoNewDialog({ trigger }: PhotoNewDialogProps) {
             <DialogClose asChild>
               <Button variant="secondary">Cancelar</Button>
             </DialogClose>
-            <Button type="submit">{isCreatingPhoto ? "Adicionando..." : "Adicionar"}</Button>
+            <Button type="submit">Adicionar</Button>
           </DialogFooter>
         </form>
       </DialogContent>

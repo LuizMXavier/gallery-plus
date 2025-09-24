@@ -30,7 +30,7 @@ export default function usePhoto(id?: string) {
                 },
                 {
                     headers: {
-                        "Content-Type":"multipart/form-data",
+                        "Content-Type":"multpart/form-data",
                     },
                 }
             );
@@ -39,7 +39,6 @@ export default function usePhoto(id?: string) {
                     albumsIds: payload.albumsIds
                 })
             }
-            queryClient.invalidateQueries({queryKey:["photos"]});
         }catch (error) { 
             throw error
         }        
@@ -50,6 +49,5 @@ export default function usePhoto(id?: string) {
         nextPhotoId: data?.nextPhotoId,
         previousPhotoId: data?.previousPhotoId,
         isLoadingPhoto: isLoading,
-        createPhoto       
     }
 }

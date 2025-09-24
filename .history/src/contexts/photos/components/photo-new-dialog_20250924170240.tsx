@@ -123,7 +123,7 @@ export default function PhotoNewDialog({ trigger }: PhotoNewDialogProps) {
             <DialogClose asChild>
               <Button variant="secondary">Cancelar</Button>
             </DialogClose>
-            <Button type="submit">{isCreatingPhoto ? "Adicionando..." : "Adicionar"}</Button>
+            <Button type="submit">{isCreatingPhoto ? "Adicio"Adicionar}</Button>
           </DialogFooter>
         </form>
       </DialogContent>

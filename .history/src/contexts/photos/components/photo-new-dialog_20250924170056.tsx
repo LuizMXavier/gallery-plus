@@ -22,7 +22,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import React from "react";
 import ImagePreview from "../../../components/image-preview";
 import usePhoto from "../hooks/use-photo";
-import { Certificate } from "node:crypto";
 
 interface PhotoNewDialogProps {
   trigger: React.ReactNode;
@@ -62,10 +61,7 @@ export default function PhotoNewDialog({ trigger }: PhotoNewDialogProps) {
   }
 
   function handleSubmit(payload: PhotoNewFormSchema) {
-    setIsCreatingPhoto(async () => {
-      await createPhoto(payload);
-      setModalOpen(false)
-    })
+    setIsCreatingPhoto(async)
   }
   return (
     <Dialog open={modalOpen} onOpenChange={setModalOpen}>
@@ -123,7 +119,7 @@ export default function PhotoNewDialog({ trigger }: PhotoNewDialogProps) {
             <DialogClose asChild>
               <Button variant="secondary">Cancelar</Button>
             </DialogClose>
-            <Button type="submit">{isCreatingPhoto ? "Adicionando..." : "Adicionar"}</Button>
+            <Button type="submit">Adicionar</Button>
           </DialogFooter>
         </form>
       </DialogContent>

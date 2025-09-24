@@ -1,4 +1,4 @@
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import type { Photo } from "../models/photo";
 import { api, fetcher } from "../../../helpers/api";
 import type { PhotoNewFormSchema } from "../schemas";
@@ -15,7 +15,7 @@ export default function usePhoto(id?: string) {
         enabled: !!id,
     });
 
-    const queryClient = useQueryClient();
+    const queryClient 
 
     async function createPhoto(payload:PhotoNewFormSchema) {
         try {
@@ -30,7 +30,7 @@ export default function usePhoto(id?: string) {
                 },
                 {
                     headers: {
-                        "Content-Type":"multipart/form-data",
+                        "Content-Type":"multpart/form-data",
                     },
                 }
             );
@@ -39,7 +39,6 @@ export default function usePhoto(id?: string) {
                     albumsIds: payload.albumsIds
                 })
             }
-            queryClient.invalidateQueries({queryKey:["photos"]});
         }catch (error) { 
             throw error
         }        
@@ -50,6 +49,5 @@ export default function usePhoto(id?: string) {
         nextPhotoId: data?.nextPhotoId,
         previousPhotoId: data?.previousPhotoId,
         isLoadingPhoto: isLoading,
-        createPhoto       
     }
 }

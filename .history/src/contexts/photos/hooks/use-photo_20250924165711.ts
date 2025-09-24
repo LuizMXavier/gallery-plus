@@ -30,7 +30,7 @@ export default function usePhoto(id?: string) {
                 },
                 {
                     headers: {
-                        "Content-Type":"multipart/form-data",
+                        "Content-Type":"multpart/form-data",
                     },
                 }
             );
@@ -50,6 +50,7 @@ export default function usePhoto(id?: string) {
         nextPhotoId: data?.nextPhotoId,
         previousPhotoId: data?.previousPhotoId,
         isLoadingPhoto: isLoading,
-        createPhoto       
+    async function createPhoto(payload:PhotoNewFormSchema) {
+
     }
 }
