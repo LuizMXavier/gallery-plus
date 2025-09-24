@@ -33,7 +33,7 @@ export default function PagePhotoDetails() {
         <div className="space-y-3">
           {!isLoadingPhoto ? (
             <ImageFilePreview
-              src={`${import.meta.env.VITE_IMAGENS_URL}/${photo?.imageId}`}
+              src={`${import.meta.env.VITE_IM}/${photo?.imageId}`}
               title={photo?.title}
               imageClassName="h-[21rem]"
             />

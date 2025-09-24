@@ -1,0 +1,4 @@
+
+interface PhotoDetailResponse extends Photo {
+    
+}

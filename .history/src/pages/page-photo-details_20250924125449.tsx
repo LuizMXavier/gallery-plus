@@ -8,16 +8,13 @@ import Button from "../components/button";
 import AlbumsListSelectable from "../contexts/albums/components/albums-list-selectable";
 import useAlbums from "../contexts/albums/hooks/use-albums";
 import usePhoto from "../contexts/photos/hooks/use-photo";
-import type { Photo } from "../contexts/photos/models/photo";
 
 export default function PagePhotoDetails() {
   const { id } = useParams();
   const {photo, isLoadingPhoto} = usePhoto(id);
   const {albums, isLoadingAlbums} = useAlbums();
   
-  if (!isLoadingPhoto && !photo){
-    return <div>Foto não encontrada</div>
-  }
+  if (!is)
 
   return (
     <Container>
@@ -33,7 +30,7 @@ export default function PagePhotoDetails() {
         <div className="space-y-3">
           {!isLoadingPhoto ? (
             <ImageFilePreview
-              src={`${import.meta.env.VITE_IMAGENS_URL}/${photo?.imageId}`}
+              src={`/images/${photo?.imageId}`}
               title={photo?.title}
               imageClassName="h-[21rem]"
             />
@@ -51,7 +48,7 @@ export default function PagePhotoDetails() {
           <Text as="h3" variant="heading-medium" className="mb-6">
             Álbuns
           </Text>
-          <AlbumsListSelectable photo={photo as Photo} albums={albums} loading={isLoadingAlbums}/>
+          <AlbumsListSelectable photo={photo} albums={albums} loading={isLoadingAlbums}/>
         </div>
       </div>
     </Container>
