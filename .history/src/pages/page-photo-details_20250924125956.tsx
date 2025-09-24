@@ -27,8 +27,7 @@ export default function PagePhotoDetails() {
         ) : (
           <Skeleton className="w-48 h-8" />
         )}
-        <PhotosNavigator loading={isLoadingPhoto} previousPhotoId={previousPhotoId} nextPhotoId={nextPhotoId}/>
-        
+        <PhotosNavigator loading={isLoadingPhoto} previousPhotoId="/>
       </header>
       <div className="grid grid-cols-[21rem_1fr] gap-24">
         <div className="space-y-3">
