@@ -9,7 +9,7 @@ const queryClient = new QueryClient();
 
 export default function App() {
 	return (
-		<QueryClientProvider client={queryClient}>
+		<QueryClientProvider client={quer}>
 			<BrowserRouter>
 				<Routes>
 					<Route element={<LayoutMain/>}>
