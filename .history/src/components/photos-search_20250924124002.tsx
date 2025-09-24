@@ -10,8 +10,8 @@ export default function PhotosSearch() {
 
     const debouncedSetValue = React.useCallback(
         debounce((value: string) => {
-            filters.setQ(value)
-        },200),[filters.setQ]
+            
+        },200),[]
     )
 
     function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {

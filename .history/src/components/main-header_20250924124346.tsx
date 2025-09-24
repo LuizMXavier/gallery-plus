@@ -28,7 +28,7 @@ export default function MainHeader({ className, ...props }: MainHeaderProps) {
         <PhotosSearch />
         <Divider orientation="vertical" className="h-10" />
       </>
-      )}
+      )
 
       <div className="flex items-center gap-3">
         <PhotoNewDialog trigger={<Button>Nova Foto</Button>} />

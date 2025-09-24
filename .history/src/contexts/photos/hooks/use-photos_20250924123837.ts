@@ -13,7 +13,7 @@ export default function usePhotos() {
     const [q, setQ] = useQueryState("q");
 
     const {data, isLoading} = useQuery<Photo[]>({
-        queryKey: ['photos', albumId, q],
+        queryKey: ['photos', albumId],
         queryFn: () => fetcher(`/photos ${toSearchParams({albumId, q})}`),
     })
 
