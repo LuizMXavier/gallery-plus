@@ -118,7 +118,7 @@ export default function AlbumNewDialog({ trigger }: AlbumNewDialogProps) {
           </DialogBody>
           <DialogFooter>
             <DialogClose asChild>
-              <Button variant="secondary" disabled={isCreatingAlbum}>Cancelar</Button>
+              <Button variant="secondary">Cancelar</Button>
             </DialogClose>
             <Button type="submit" disabled={isCreatingAlbum} handling={isCreatingAlbum}>{isCreatingAlbum ? "Criando.." : "Criar"}</Button>
           </DialogFooter>

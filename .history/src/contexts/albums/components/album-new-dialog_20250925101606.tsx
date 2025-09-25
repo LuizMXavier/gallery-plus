@@ -54,8 +54,7 @@ export default function AlbumNewDialog({ trigger }: AlbumNewDialogProps) {
 
   function handleSubmit(payload: AlbumNewFormSchema) {
     setIsCreatingAlbum(async () => {
-      await createAlbum(payload);
-      setModalOpen(false);
+      await createAlbum(payload)
     })
   }
 
@@ -118,9 +117,9 @@ export default function AlbumNewDialog({ trigger }: AlbumNewDialogProps) {
           </DialogBody>
           <DialogFooter>
             <DialogClose asChild>
-              <Button variant="secondary" disabled={isCreatingAlbum}>Cancelar</Button>
+              <Button variant="secondary">Cancelar</Button>
             </DialogClose>
-            <Button type="submit" disabled={isCreatingAlbum} handling={isCreatingAlbum}>{isCreatingAlbum ? "Criando.." : "Criar"}</Button>
+            <Button type="submit">Criar</Button>
           </DialogFooter>
         </form>
       </DialogContent>

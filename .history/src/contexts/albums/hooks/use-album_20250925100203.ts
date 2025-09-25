@@ -1,0 +1,13 @@
+import type { Album } from "../models/album";
+import type { AlbumNewFormSchema } from "../schemas";
+
+
+export default function useAlbum() {
+    async function createAlbum(payload: AlbumNewFormSchema) {
+        try {
+            const {data: album} = await api.post<Album>("/albums", {
+                
+            })
+        }
+    }
+}
