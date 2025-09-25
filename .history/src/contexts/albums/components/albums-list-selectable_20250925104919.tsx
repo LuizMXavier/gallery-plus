@@ -35,13 +35,13 @@ export default function AlbumsListSelectable({
         }
 
         setIsUpdatingPhoto(async () => {
-          await managePhotoOnALbum(photo.id, albumsIds)
+          await managePhotoOnAlbum(photo.id, albumsIds)
         })
         
     }
   return (
     <ul className="flex flex-col gap-4">
-      {!loading && photo && albums?.length > 0 && albums.map((album, index) => (
+      {!loading && albums?.length > 0 && albums.map((album, index) => (
         <li key={album.id}>
           <div className="flex items-center justify-between gap-1">
             <Text variant="paragraph-large" className="truncate">

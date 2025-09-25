@@ -4,15 +4,13 @@ import type { Album } from "../models/album";
 import type { AlbumNewFormSchema } from "../schemas";
 import { toast } from "sonner";
 import usePhotos from "../../photos/hooks/use-photos";
-import usePhotoAlbums from "../../photos/hooks/use-photo-albums";
 
 
 
 export default function useAlbum() {
     const queryClient = useQueryClient();
     const {photos} = usePhotos();
-    const {managePhotoOnALbum} = usePhotoAlbums();
-
+    const {} =
     async function createAlbum(payload: AlbumNewFormSchema) {
         try {
             const {data: album} = await api.post<Album>("/albums", {
@@ -25,9 +23,11 @@ export default function useAlbum() {
                         const photoAlbumsIds = photos.find((photo) => photo.id === photoId)
                            ?.albums?.map(album => album.id) || [];
 
-                        return managePhotoOnALbum(photoId, [...photoAlbumsIds,album.id]); 
+                        return api.put(`/photos/${photoId}/albums`), {
+                            albumsIds: [...photoAlbumsIds,album.id],
+                        };
                     })
-                );
+                )
             };
 
             queryClient.invalidateQueries({queryKey:["albums"]});

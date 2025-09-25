@@ -25,9 +25,12 @@ export default function useAlbum() {
                         const photoAlbumsIds = photos.find((photo) => photo.id === photoId)
                            ?.albums?.map(album => album.id) || [];
 
-                        return managePhotoOnALbum(photoId, [...photoAlbumsIds,album.id]); 
+                        return managePhotoOnALbum 
+                        api.put(`/photos/${photoId}/albums`), {
+                            albumsIds: [...photoAlbumsIds,album.id],
+                        };
                     })
-                );
+                )
             };
 
             queryClient.invalidateQueries({queryKey:["albums"]});

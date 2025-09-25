@@ -38,7 +38,9 @@ export default function usePhoto(id?: string) {
                 }
             );
             if(payload.albumsIds && payload.albumsIds.length > 0) {
-                await managePhotoOnALbum(photo.id, payload.albumsIds);
+                await api.put(`/photos/${photo.id}/albums`, {
+                    albumsIds: payload.albumsIds
+                })
             }
             queryClient.invalidateQueries({queryKey:["photos"]});
             toast.success("Foto criada com sucesso")

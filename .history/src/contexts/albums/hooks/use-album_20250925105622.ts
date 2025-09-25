@@ -26,8 +26,11 @@ export default function useAlbum() {
                            ?.albums?.map(album => album.id) || [];
 
                         return managePhotoOnALbum(photoId, [...photoAlbumsIds,album.id]); 
+                        api.put(`/photos/${photoId}/albums`), {
+                            albumsIds: 
+                        };
                     })
-                );
+                )
             };
 
             queryClient.invalidateQueries({queryKey:["albums"]});
