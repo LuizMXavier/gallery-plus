@@ -46,8 +46,6 @@ export default function AlbumNewDialog({ trigger }: AlbumNewDialogProps) {
     } else {
       newValue = photosIds.filter((id) => id !== photoId);
     }
-
-    form.setValue('photosIds', newValue);
   }
 
   function handleSubmit(payload: AlbumNewFormSchema) {

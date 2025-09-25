@@ -39,15 +39,10 @@ export default function AlbumNewDialog({ trigger }: AlbumNewDialogProps) {
 
   function handleTogglePhoto(selected: boolean, photoId: string) {
     const photosIds = form.getValues('photosIds') || [];
-    let newValue = [];
-
+    
     if(selected) {
-      newValue = [...photosIds, photoId];
-    } else {
-      newValue = photosIds.filter((id) => id !== photoId);
+      form.setValue('photosIds', [...photosIds, photoId])
     }
-
-    form.setValue('photosIds', newValue);
   }
 
   function handleSubmit(payload: AlbumNewFormSchema) {
