@@ -53,12 +53,9 @@ export default function usePhoto(id?: string) {
     async function deletePhoto(photoId: string) {
         try {
             await api.delete(`/photos/${photoId}`);
-            toast.success("Foto excluida com sucesso")
+            toast.success("Foto deteletada com sucesso")
             navigate('/');
-        } catch (error) {
-            toast.error("Erro ao excluir foto");
-            throw error;
-        }
+        } catch (error)
     }
 
     return {
@@ -66,7 +63,6 @@ export default function usePhoto(id?: string) {
         nextPhotoId: data?.nextPhotoId,
         previousPhotoId: data?.previousPhotoId,
         isLoadingPhoto: isLoading,
-        createPhoto,
-        deletePhoto       
+        createPhoto       
     }
 }

@@ -16,13 +16,6 @@ export default function PagePhotoDetails() {
   const {photo, isLoadingPhoto, previousPhotoId, nextPhotoId, deletePhoto} = usePhoto(id);
   const {albums, isLoadingAlbums} = useAlbums();
   const [isDeletingPhoto, setIsDeletingPhoto] = React.useTransition();  
-  
-  function handleDeletePhoto() {
-    setIsDeletingPhoto(async () => {
-      await deletePhoto(photo!.id);
-    });
-  }
-  
   if (!isLoadingPhoto && !photo){
     return <div>Foto não encontrada</div>
   }
@@ -51,9 +44,7 @@ export default function PagePhotoDetails() {
           )}
 
           {!isLoadingPhoto ? (
-            <Button variant="destructive" onClick={handleDeletePhoto} disabled={isDeletingPhoto}>
-              {isDeletingPhoto ? "Excluindo..." : "Excluir"}
-            </Button>
+            <Button variant="destructive">Excluir</Button>
           ) : (
             <Skeleton className="w-20 h-10" />
           )}

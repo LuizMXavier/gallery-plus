@@ -56,7 +56,7 @@ export default function usePhoto(id?: string) {
             toast.success("Foto excluida com sucesso")
             navigate('/');
         } catch (error) {
-            toast.error("Erro ao excluir foto");
+            toast.error("Erro ao deletar foto");
             throw error;
         }
     }

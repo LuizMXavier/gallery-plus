@@ -51,9 +51,7 @@ export default function PagePhotoDetails() {
           )}
 
           {!isLoadingPhoto ? (
-            <Button variant="destructive" onClick={handleDeletePhoto} disabled={isDeletingPhoto}>
-              {isDeletingPhoto ? "Excluindo..." : "Excluir"}
-            </Button>
+            <Button variant="destructive" onClick={handleDeletePhoto} disabled={isDeletingPhoto}>Excluir</Button>
           ) : (
             <Skeleton className="w-20 h-10" />
           )}

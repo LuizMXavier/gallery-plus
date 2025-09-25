@@ -18,9 +18,7 @@ export default function PagePhotoDetails() {
   const [isDeletingPhoto, setIsDeletingPhoto] = React.useTransition();  
   
   function handleDeletePhoto() {
-    setIsDeletingPhoto(async () => {
-      await deletePhoto(photo!.id);
-    });
+    setIsDeletingPhoto(async)
   }
   
   if (!isLoadingPhoto && !photo){
@@ -51,9 +49,7 @@ export default function PagePhotoDetails() {
           )}
 
           {!isLoadingPhoto ? (
-            <Button variant="destructive" onClick={handleDeletePhoto} disabled={isDeletingPhoto}>
-              {isDeletingPhoto ? "Excluindo..." : "Excluir"}
-            </Button>
+            <Button variant="destructive">Excluir</Button>
           ) : (
             <Skeleton className="w-20 h-10" />
           )}
